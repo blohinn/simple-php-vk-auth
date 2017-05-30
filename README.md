@@ -4,9 +4,9 @@
 
 <hr>
 
-1. Регистрируем **web-приложение (сайт)** на https://vk.com/editapp?act=create
-2. В настройках приложения (на том же vk.com) получаем **ID приложения**, **защищённый ключ** и **сервисный ключ доступа**.
-3. Там же указываем **базовый домен** вашего сайта (yourapp.com) и доверенный **redirect URI** (https://yourapp.com/libs/simple-php-vk-auth/auth.php).
+1. Регистрируем **web-приложение (сайт)** на https://vk.com/editapp?act=create;
+2. В настройках приложения (на том же vk.com) получаем **ID приложения**, **защищённый ключ** и **сервисный ключ доступа**;
+3. Там же указываем **базовый домен** вашего сайта (yourapp.com) и доверенный **redirect URI** (https://yourapp.com/libs/simple-php-vk-auth/auth.php);
 4. Настраиваем файл **config.php**:
 <pre>
 //Права, которые мы хотим получить (https://vk.com/dev/permissions)
@@ -23,7 +23,6 @@ define('APP_SERVICE_KEY', 'aaabbbccc'); //Сервисный ключ досту
 define('ACCESS_TOKEN_URL', 'https://oauth.vk.com/access_token'); //не трогать
 define('AUTH_URL', 'https://oauth.vk.com/authorize'); ////не трогать
 define('AUTH_DIALOG_URL', AUTH_URL . '?' . 'client_id=' . APP_ID . '&redirect_uri=' . REDIRECT_URL . '&response_type=code&display=page&scope=' . implode(',', $scope)); //Вызов диалога авторизации через ВК
-
 </pre>
 5. Делаем ссылку на авторизацию в духе:
 <pre>
@@ -35,6 +34,6 @@ $_SESSION['token']  //Сам токен
 $_SESSION['secret'] //Секретка для выполнения некоторых методов (не заморачивайтесь, когда она будет нужна - поймете сами)
 $_SESSION['uid']    //id авторизовавшегося пользователя
 </pre>
-7. Ну а если нет, то смотрим ошибки, которые возвращает ответом vk api
+7. Ну а если нет, то смотрим ошибки, которые возвращает ответом vk api;
 
 Ессена это не будет работать на localhost.
